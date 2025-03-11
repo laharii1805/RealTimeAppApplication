@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         id="WebApp_ID" version="4.0">
+  
+  <display-name>ChatApplication</display-name>
+
+  <!-- Welcome Page -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+
+  <!-- Login Servlet -->
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.chatapp.servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- Register Servlet -->
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.chatapp.servlets.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- Chat Servlet -->
+  <servlet>
+    <servlet-name>ChatServlet</servlet-name>
+    <servlet-class>com.chatapp.servlets.ChatServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChatServlet</servlet-name>
+    <url-pattern>/ChatServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- WebSocket Server -->
+  <servlet>
+    <servlet-name>WebSocketServer</servlet-name>
+    <servlet-class>com.chatapp.websocket.WebSocketServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WebSocketServer</servlet-name>
+    <url-pattern>/chatSocket</url-pattern>
+  </servlet-mapping>
+
+  <!-- Session Timeout (30 minutes) -->
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+
+</web-app>
